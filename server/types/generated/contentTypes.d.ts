@@ -398,6 +398,44 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAchievementAchievement extends Struct.CollectionTypeSchema {
+  collectionName: 'achievements';
+  info: {
+    description: '';
+    displayName: 'achievements';
+    pluralName: 'achievements';
+    singularName: 'achievement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    alumniId: Schema.Attribute.BigInteger;
+    alumniName: Schema.Attribute.String;
+    category: Schema.Attribute.Enumeration<
+      ['Speaking', 'Publication', 'Recognition', 'Award', 'Contribution']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    desc: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::achievement.achievement'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'achievement'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -1044,6 +1082,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::achievement.achievement': ApiAchievementAchievement;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achievements",
+  "info": {
+    "singularName": "achievement",
+    "pluralName": "achievements",
+    "displayName": "achievements",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "alumniId": {
+      "type": "biginteger"
+    },
+    "alumniName": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Speaking",
+        "Publication",
+        "Recognition",
+        "Award",
+        "Contribution"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "achievement"
+    }
+  }
+}
