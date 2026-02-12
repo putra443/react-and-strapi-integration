@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Jobs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "blocks"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "jobtype": {
+      "type": "enumeration",
+      "enum": [
+        "In House",
+        "Startup",
+        "Government",
+        "Law Firm",
+        "NGO"
+      ]
+    }
+  }
+}

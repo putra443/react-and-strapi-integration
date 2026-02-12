@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collaborations",
+  "info": {
+    "singularName": "collaboration",
+    "pluralName": "collaborations",
+    "displayName": "collaborations"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "collaborationType": {
+      "type": "enumeration",
+      "enum": [
+        "Research",
+        "Pro Bono",
+        "Startup Support",
+        "Mentoring"
+      ]
+    },
+    "requirements": {
+      "type": "blocks"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "postedByName": {
+      "type": "string"
+    },
+    "postedById": {
+      "type": "biginteger"
+    }
+  }
+}
